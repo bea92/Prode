@@ -7,11 +7,15 @@ $screen-background:#121010;ˇ */
   src: url("fonts/SuisseWorks-Regular.otf") format("truetype")
     /* EOT file for IE */
 }
-
+/*
 @font-face {
   font-family: Messapia;
   src: url("fonts/Messapia-bold.otf") format("truetype")
     /* EOT file for IE */
+
+@font-face {
+font-family: "Messapia";
+src: url("./fonts/Messapia-Bold.otf");
 }
 
 .fa {
