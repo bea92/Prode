@@ -12,6 +12,7 @@ $(document).scroll(function() {
   if (y >= 100) {
     //show the image and make the header fixed
     header.addClass('fixed');
+    header.addClass('fixed');
     image.show();
   } else {
     //put the header in original position and hide image
@@ -63,7 +64,6 @@ function showInfo(data, tabletop) {
 
 
   //preview content
-
   preview.append('h3')
     .classed('title', true)
     .text(function(d) {
@@ -77,12 +77,6 @@ function showInfo(data, tabletop) {
     });
 
 
-  // preview.append("p")
-  //   .classed("text-left", true)
-  //   .text(function(d) {
-  //     return "Fase del ciclo: " + d.ciclo
-  //   });
-
   //full content
 
   let full = project.append("div")
@@ -95,7 +89,7 @@ function showInfo(data, tabletop) {
     .classed('responsive-img', true)
     .style('background-image', function(d) {
       let imagename = d.image
-      return `url("https://raw.githubusercontent.com/bea92/Prode/prova-interfaccia-diversa/img/${imagename}.jpg")`;
+      return `url("https://raw.githubusercontent.com/bea92/Prode/master/img/${imagename}.jpg")`;
     });
 
   full.append('p')

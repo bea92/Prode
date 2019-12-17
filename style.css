@@ -1,17 +1,17 @@
-/* @import "compass/css3"; */
-/* $ease-out-quint:cubic-bezier(0.230, 1.000, 0.320, 1.000);
-$ease-in-quint:cubic-bezier(0.755, 0.050, 0.855, 0.060);
-$screen-background:#121010;ˇ */
+/* common CSS */
+
+ :root {
+   --viola: #4f40e1;
+   --rosa: #FFCAFF;
+   --text-color: black;
+ }
+
+
 @font-face {
   font-family: Swiss;
   src: url("fonts/SuisseWorks-Regular.otf") format("truetype")
-    /* EOT file for IE */
+
 }
-/*
-@font-face {
-  font-family: Messapia;
-  src: url("fonts/Messapia-bold.otf") format("truetype")
-    /* EOT file for IE */
 
 @font-face {
 font-family: "Messapia";
@@ -26,6 +26,11 @@ body {
   font-family: 'Swiss', serif;
   background: white;
   font-size: 1rem;
+}
+
+.container{
+  padding-right:2em;
+  padding-left:2em;
 }
 
 footer {
@@ -43,10 +48,19 @@ footer p {
 
 p {
   font-family: "Swiss", serif;
-  font-size: 1.1rem;
-  line-height: 2rem;
+  font-size: 1.2em;
+  line-height: 1.9em;
   color:black;
 }
+
+
+li {
+  font-family: "Swiss", serif;
+  font-size: 1.2em;
+  line-height: 1.9em;
+  margin-bottom: 1em;
+}
+
 
 .row {
   display: -ms-flexbox;
@@ -79,21 +93,22 @@ h3 {
   margin: 2em 0 1em 0;
 }
 
-h3:hover{
-  color:#4f40e1;
+a:hover{
+  color:var(--viola);
   text-decoration: none;
 }
 
 
 #myImage {
   margin-right: 1em;
+  width: 5%;
 }
 
 #menu.fixed {
+  align-items: center;
   position: fixed;
   top: 0;
   width: 100%;
-  float: right;
 }
 
 #myBtn {
@@ -113,7 +128,7 @@ h3:hover{
 }
 
 #myBtn:hover {
-  background-color: #FFCAFF;
+  background-color: var(--rosa);
   color: black;
   -webkit-transition: background-color 1s ease-out;
   -moz-transition: background-color 1s ease-out;
@@ -160,10 +175,11 @@ a {
   font-family: "Messapia", sans-serif;
   background-color: white;
   vertical-align: middle;
+  align-content: center;
 }
 
 .navbar li:hover {
-  background-color: #FFCAFF;
+  background-color: var(--rosa);
   color: black;
   -webkit-transition: background-color 1s ease-out;
   -moz-transition: background-color 1s ease-out;
@@ -191,7 +207,7 @@ a {
 
 .custom-toggler.navbar-toggler {
   border-color: black;
-  background-color: #FFCAFF;
+  background-color: var(--rosa);
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -201,7 +217,8 @@ a {
 .nav-item {
   float: right;
   margin-right: 1em;
-  /* margin-top:1em; */
+  margin-top:0em;
+  margin-bottom:0em;
 }
 
 .nav-link {
@@ -211,6 +228,11 @@ a {
 .navbar-collapse .nav-link {
   padding: 0.3em 1em 0.3em 1em;
 }
+
+.logo{
+
+}
+
 
 #intro {
   width: 100%;
@@ -224,20 +246,6 @@ a {
   width: 100%;
   padding: 4em 0 8em 0;
   color: black;
-  font-size: 1.1em;
-  border-top: 1px solid black;
-}
-
-#about p {
-  font-family: "Swiss", serif;
-  font-size: 1.1rem;
-  line-height: 1.8rem;
-}
-
-#about li {
-  font-family: "Swiss", serif;
-  font-size: 1.1rem;
-  line-height: 1.8rem;
 }
 
 #about h2 {
@@ -250,7 +258,7 @@ a {
 }
 
 #about a{
-  background: -webkit-linear-gradient(#ff026f, #4F40E1);
+  background: -webkit-linear-gradient(#ff026f, var(--viola));
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
 }
@@ -261,31 +269,22 @@ a {
   width: 100%;
   padding: 2em 0 2em 0;
   color: black;
-  font-size: 1em;
   border-top: 1px solid black;
 }
 
 #team h2 {
   margin: 1em 0 1em 0;
   font-family: 'Messapia', sans-serif;
-  font-size: 2rem;
   font-weight: 800;
   color: black;
   text-transform: uppercase;
 }
 
 #casi {
-  background-color: #FFCAFF;
+  background-color: var(--rosa);
   width: 100%;
   padding: 4em 0 8em 0;
-  line-height: 1.8em;
   color: black;
-}
-
-#casi p{
-  font-size:1.2em;
-  font-family: "Swiss", serif;
-  line-height: 1.7em;
 }
 
 
@@ -293,34 +292,25 @@ a {
   background-color: white;
   width: 100%;
   padding: 4em 0 8em 0;
-  line-height: 1.8em;
   color: black;
-}
-
-#news p{
-  font-size:1.2em;
-  line-height: 1.7em;
-  color:black;
 }
 
 #news-list, #projects-list h3{
   font-family: 'Messapia', sans-serif;
-  font-size: 1.6rem;
   font-weight: 800;
-  color:#4f40e1;
 }
 
+/* da tenere */
 
 #intro p {
-  font-size: 1.5rem;
-  line-height: 2.8rem;
+  font-size: 1.4em;
+  line-height: 2.2em;
 }
 
 #lista{
   background-color: white;
   width: 100%;
   padding: 4em 0 8em 0;
-  line-height: 1.8em;
   color: black;
 }
 
@@ -367,7 +357,7 @@ a {
 }
 
 ::selection {
-  background: #FFCAFF;
+  background: var(--rosa);
   color: black;
 }
 
@@ -377,24 +367,10 @@ a {
   color: black;
 }
 
-li {
-  font-family: "Swiss", serif;
-  font-size: 1.2rem;
-  line-height: 1.9rem;
-}
-
-.header p {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: black;
-  width: 100%;
-  align-content:
-}
-
 select {
   padding: 5px 35px 5px 5px;
   font-size: 16px;
-  border: #FFCAFF;
+  border: var(--rosa);
   height: 40px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -442,7 +418,7 @@ ul {
   display: block;
   font-weight: 400;
   font-family: "Swiss", serif;
-  color:#4f40e1;
+  color:var(--viola);
   margin-bottom:0.3em;
 }
 
@@ -458,19 +434,16 @@ ul {
   display: block;
   font-weight: 400;
   font-family: "Swiss", serif;
-  color:#4f40e1;
+  color:var(--viola);
 }
 
 
 .year {
   text-transform:capitalize;
+    font-size:0.8em;
   font-weight: 800;
   font-family: "Swiss", serif;
   color: black;
-}
-
-.year p{
-  font-size:0.8em;
 }
 
 .author {
@@ -478,7 +451,7 @@ ul {
   font-weight: 400;
   font-family: "Swiss", serif;
   font-style: italic;
-  color: #4f40e1;
+  color: var(--viola);
 }
 
 .subtitle {
@@ -494,7 +467,7 @@ ul {
   font-family: 'Messapia', sans-serif;
   font-size: 1.3em;
   font-weight: 800;
-  color: #4f40e1;
+  color: black;
   margin: 0;
   position: relative;
   margin-bottom: 0.2em;
@@ -540,7 +513,6 @@ display:none;
 
 .description {
   font-family: 'Swiss', serif;
-  font-size: 1em;
   font-weight: 400;
   margin: 1em 0 0.5em 0;
   color: black;
@@ -548,10 +520,13 @@ display:none;
   margin-top: 2em;
 }
 
-
+.responsive {
+  width: 100%;
+  height: auto;
+}
 
 .text-right a {
-  font-size: 0.8em;
+  font-size: 0.6em;
   font-weight: 100;
   cursor: pointer;
   border: 1px solid black;
@@ -607,18 +582,17 @@ display:none;
 
   .navbar {
     float: left;
-    background-color: #FFCAFF;
+    background-color: var(--rosa);
   }
 
   .navbar-nav {
-    background-color: #FFCAFF;
+    background-color: var(--rosa);
   }
 
-  li .nav-item {
-    background-color: #FFCAFF;
+.nav-item {
+    background-color: var(--rosa);
     float: right;
     margin-bottom: 1em;
-    margin-top: 1em;
     border: none;
   }
 
@@ -635,11 +609,18 @@ display:none;
     position: inherit;
   }
 
-  #myImage {
+#myImage{
     display: none;
+    width: 0%;
+    background-color: transparent;
   }
 
   #cover img {
     width: 70%;
   }
+
+.logo{
+  width: 70%;
+}
+
 }
