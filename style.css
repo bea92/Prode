@@ -112,6 +112,7 @@ a:hover{
 }
 
 #myBtn {
+  background-color: white;
   display: none;
   position: fixed;
   bottom: 20px;

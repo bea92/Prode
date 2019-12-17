@@ -146,7 +146,6 @@ function showInfo(data, tabletop) {
       .classed("close", d3.select(this.parentNode).select(".full").classed("close") ? false : true);
   }
 
-
   //dropdown filters
   var allGroup = d3.map(data["cases2"].elements, function(d) {
     return (d.ciclo)
@@ -161,39 +160,33 @@ function showInfo(data, tabletop) {
     .text(function(d) {
       return d;
     })
-    // text showed in the menu
-    .attr("value", function(d) {
-      return d;
-    })
 
   // A function that update the chart
   function update(selectedGroup) {
-
-    // Create new data with the selection?
-    var dataFilter = allGroup.filter(function(d) {
-      return d.ciclo == selectedGroup
-    })
-
-    // Give these new data to update line
-    // line
-    //     .datum(dataFilter)
-    //     .transition()
-    //     .duration(1000)
-    //     .attr("stroke", function(d){ return myColor(selectedGroup) })
   }
+
 
   // When the button is changed, run the updateChart function
   d3.select("#selectButton").on("change", function(d) {
+
     // recover the option that has been chosen
     var selectedOption = d3.select(this).property("value")
 
     console.log(selectedOption)
-    console.log(selectedGroup)
+    // console.log(selectedGroup)
+
     // run the updateChart function with this selected option
     update(selectedOption)
-  })
+  });
 
 
+
+
+
+
+
+
+///NEWS////
 
   let news = d3.select('#news-list').selectAll('.news').data(data["news"].elements, function(d) {
     return d.id
