@@ -368,7 +368,7 @@ a {
   color: black;
 }
 
-select {
+/* select {
   padding: 5px 35px 5px 5px;
   font-size: 16px;
   border: var(--rosa);
@@ -376,7 +376,35 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+} */
+
+select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: #F07575; /* Fallback color if gradients are not supported */
+    background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, var(--rosa), var(--rosa)); /* For Chrome and Safari */
+    background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, var(--rosa), var(--rosa)); /* For old Firefox (3.6 to 15) */
+    background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, var(--rosa), var(--rosa)); /* For pre-releases of Internet Explorer  10*/
+    background-image: url(../images/select-arrow.png), -o-linear-gradient(top, var(--rosa), var(--rosa)); /* For old Opera (11.1 to 12.0) */
+    background-image: url(../images/select-arrow.png), linear-gradient(to bottom,var(--rosa), var(--rosa)); /* Standard syntax; must be last */
+    background-position: center right;
+    background-repeat: no-repeat;
+    margin: 0;
+    overflow: hidden;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: var(--rosa);
+    height: 40px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
+
 
 /* CAUTION: Internet Explorer hackery ahead */
 select::-ms-expand {
@@ -388,7 +416,7 @@ select::-ms-expand {
   position: relative;
   width:inherit;
   position: relative;
-  background-color: white;
+  background-color: var(--rosa);
   border: 1px solid black;
   margin-top:1em;
 }
