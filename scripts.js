@@ -40,9 +40,9 @@ function init() {
     callback: function(data) {
       globalData = data
 
-let options  = data["cases2"].elements.map(d=>d.ciclo.split(", ")).flat()
-options = d3.nest().key(d=>d).entries(options).map(d=>d.key)
-// console.log(options)
+      let options  = data["cases2"].elements.map(d=>d.ciclo.split(", ")).flat()
+      options = d3.nest().key(d=>d).entries(options).map(d=>d.key)
+      // console.log(options)
 
         //dropdown filters
         var allGroup = options
@@ -83,12 +83,11 @@ options = d3.nest().key(d=>d).entries(options).map(d=>d.key)
   })
 }
 
-let projectList = d3.select('#projects-list')
-  .selectAll('.project')
+let projectList = d3.select('#projects-list').selectAll('.project')
 
 function showInfo(data, filter) {
 
-  // console.log(data, filter)
+  console.log(data, filter)
 
   let localData;
 
@@ -101,24 +100,19 @@ function showInfo(data, filter) {
   console.log(localData)
 
 
-  projectList = projectList
-    .data(localData, function(d) {
-      console.log(d.id)
-      return d.id
-    })
+  projectList = projectList.data(localData, d=>d.id)
 
   projectList.exit().remove();
 
-  projectList = projectList.enter()
-    .append('li')
+  projectList = projectList.enter().append('li')
     .classed('project', true)
     .merge(projectList);
 
+  projectList.selectAll("*").remove()
 
   let preview = projectList.append('div')
     .classed('preview', true)
     .on("click", showFullContent);
-
 
   //preview content
 
