@@ -32,38 +32,96 @@ selectSection('#home')
 var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/12ansgKMcs6e1gsfu5O00AtRdyQCxdO__r8c9Sc3miow/edit?usp=sharing';
 // var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1uKLFKf_ZIci6eTLRvzQnbBHc5h0cz2Q48PA_A2emtEE/edit#gid=998515236';
 
+var globalData;
+
 function init() {
   Tabletop.init({
     key: publicSpreadsheetUrl,
-    callback: showInfo,
+    callback: function(data) {
+      globalData = data
+
+let options  = data["cases2"].elements.map(d=>d.ciclo.split(", ")).flat()
+options = d3.nest().key(d=>d).entries(options).map(d=>d.key)
+// console.log(options)
+
+        //dropdown filters
+        var allGroup = options
+        // var allGroup = d3.map(data["cases2"].elements, function(d) {
+        //   return (d.ciclo)
+        // }).keys()
+
+        //  Create a select element
+        d3.select("#selectButton")
+          .selectAll('myOptions')
+          .data(allGroup)
+          .enter()
+          .append('option')
+          .text(function(d) {
+            return d;
+          })
+
+        // A function that update the chart
+        function update(selectedOption) {
+          // console.log(selectedOption)
+          showInfo(globalData, selectedOption)
+        }
+
+        // When the button is changed, run the updateChart function
+        d3.select("#selectButton").on("change", function(d) {
+
+          // recover the option that has been chosen
+          var selectedOption = d3.select(this).property("value")
+
+          // run the updateChart function with this selected option
+          update(selectedOption)
+        });
+
+
+      showInfo(data);
+    },
     simpleSheet: false
   })
 }
 
-function showInfo(data, tabletop) {
+let projectList = d3.select('#projects-list')
+  .selectAll('.project')
+
+function showInfo(data, filter) {
+
+  // console.log(data, filter)
+
+  let localData;
+
+  if (filter) {
+    localData = data["cases2"].elements.filter((d) => d.ciclo.includes(filter))
+  } else {
+    localData = data["cases2"].elements
+  }
+
+  console.log(localData)
 
 
-  let projectList = d3.select('#projects-list')
-    .selectAll('.project')
-    .data(data["cases2"].elements, function(d) {
+  projectList = projectList
+    .data(localData, function(d) {
+      console.log(d.id)
       return d.id
     })
 
   projectList.exit().remove();
 
-  let project = projectList.enter()
+  projectList = projectList.enter()
     .append('li')
     .classed('project', true)
     .merge(projectList);
 
 
-  let preview = project.append('div')
+  let preview = projectList.append('div')
     .classed('preview', true)
     .on("click", showFullContent);
 
 
-
   //preview content
+
   preview.append('h3')
     .classed('title', true)
     .text(function(d) {
@@ -79,7 +137,7 @@ function showInfo(data, tabletop) {
 
   //full content
 
-  let full = project.append("div")
+  let full = projectList.append("div")
     .classed("full", true)
     .classed("close", true);
 
@@ -126,14 +184,14 @@ function showInfo(data, tabletop) {
 
 
 
-      project.append('p')
-        .classed('link', true)
-        .append('a')
-        .attr('href', function(d) {
-          return d.link
-        })
-        .text('→ Visita il sito web')
-        .attr('target', '_blank');
+  projectList.append('p')
+    .classed('link', true)
+    .append('a')
+    .attr('href', function(d) {
+      return d.link
+    })
+    .text('→ Visita il sito web')
+    .attr('target', '_blank');
 
 
 
@@ -146,47 +204,10 @@ function showInfo(data, tabletop) {
       .classed("close", d3.select(this.parentNode).select(".full").classed("close") ? false : true);
   }
 
-  //dropdown filters
-  var allGroup = d3.map(data["cases2"].elements, function(d) {
-    return (d.ciclo)
-  }).keys()
-
-  //  Create a select element
-  d3.select("#selectButton")
-    .selectAll('myOptions')
-    .data(allGroup)
-    .enter()
-    .append('option')
-    .text(function(d) {
-      return d;
-    })
-
-  // A function that update the chart
-  function update(selectedGroup) {
-  }
-
-
-  // When the button is changed, run the updateChart function
-  d3.select("#selectButton").on("change", function(d) {
-
-    // recover the option that has been chosen
-    var selectedOption = d3.select(this).property("value")
-
-    console.log(selectedOption)
-    // console.log(selectedGroup)
-
-    // run the updateChart function with this selected option
-    update(selectedOption)
-  });
 
 
 
-
-
-
-
-
-///NEWS////
+  ///NEWS////
 
   let news = d3.select('#news-list').selectAll('.news').data(data["news"].elements, function(d) {
     return d.id
