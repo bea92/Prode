@@ -1,21 +1,19 @@
 /* common CSS */
 
- :root {
-   --viola: #4f40e1;
-   --rosa: #FFCAFF;
-   --text-color: black;
- }
-
-
-@font-face {
-  font-family: Swiss;
-  src: url("fonts/SuisseWorks-Regular.otf") format("truetype")
-
+:root {
+  --viola: #4f40e1;
+  --rosa: #ffcaff;
+  --text-color: black;
 }
 
 @font-face {
-font-family: "Messapia";
-src: url("./fonts/Messapia-Bold.otf");
+  font-family: Swiss;
+  src: url("fonts/SuisseWorks-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Messapia";
+  src: url("./fonts/Messapia-Bold.otf");
 }
 
 .fa {
@@ -23,14 +21,14 @@ src: url("./fonts/Messapia-Bold.otf");
 }
 
 body {
-  font-family: 'Swiss', serif;
+  font-family: "Swiss", serif;
   background: white;
   font-size: 1rem;
 }
 
-.container{
-  padding-right:2em;
-  padding-left:2em;
+.container {
+  padding-right: 2em;
+  padding-left: 2em;
 }
 
 footer {
@@ -50,9 +48,8 @@ p {
   font-family: "Swiss", serif;
   font-size: 1.2em;
   line-height: 1.9em;
-  color:black;
+  color: black;
 }
-
 
 li {
   font-family: "Swiss", serif;
@@ -60,7 +57,6 @@ li {
   line-height: 1.9em;
   margin-bottom: 1em;
 }
-
 
 .row {
   display: -ms-flexbox;
@@ -71,14 +67,14 @@ li {
 }
 
 h1 {
-  font-family: 'Messapia', sans-serif;
+  font-family: "Messapia", sans-serif;
   font-size: 12rem;
   color: #ff026f;
   width: 100%;
 }
 
 h2 {
-  font-family: 'Messapia', sans-serif;
+  font-family: "Messapia", sans-serif;
   text-transform: uppercase;
   font-size: 1.8rem;
   font-weight: 800;
@@ -87,17 +83,16 @@ h2 {
 }
 
 h3 {
-  font-family: 'Messapia', sans-serif;
+  font-family: "Messapia", sans-serif;
   font-size: 1.3em;
   font-weight: 400;
   margin: 2em 0 1em 0;
 }
 
-a:hover{
-  color:var(--viola);
+a:hover {
+  color: var(--viola);
   text-decoration: none;
 }
-
 
 #myImage {
   margin-right: 1em;
@@ -120,7 +115,7 @@ a:hover{
   z-index: 99;
   color: black;
   font-size: 1rem;
-  font-family: 'Messapia', sans-serif;
+  font-family: "Messapia", sans-serif;
   font-weight: 800;
   padding: 0.3em 1em 0.3em 1em;
   text-decoration: none;
@@ -143,8 +138,6 @@ a:hover {
   text-decoration: none;
 }
 
-
-
 a {
   color: black;
   text-decoration: none;
@@ -154,8 +147,6 @@ a {
   transition: color 1s ease-out;
   cursor: pointer;
 }
-
-
 
 .navbar {
   position: fixed;
@@ -192,7 +183,7 @@ a {
 .navbar li {
   color: black;
   font-size: 1rem;
-  font-family: 'Messapia', sans-serif;
+  font-family: "Messapia", sans-serif;
   text-transform: uppercase;
   font-weight: 800;
   text-decoration: none;
@@ -218,8 +209,8 @@ a {
 .nav-item {
   float: right;
   margin-right: 1em;
-  margin-top:0em;
-  margin-bottom:0em;
+  margin-top: 0em;
+  margin-bottom: 0em;
 }
 
 .nav-link {
@@ -230,16 +221,15 @@ a {
   padding: 0.3em 1em 0.3em 1em;
 }
 
-.logo{
-
+.logo {
+  width: 70%;
 }
-
 
 #intro {
   width: 100%;
   padding: 4em 0 8em 0;
   box-shadow: 0 -2em 2em red;
-  z-index:9999;
+  z-index: 9999;
 }
 
 #about {
@@ -251,19 +241,18 @@ a {
 
 #about h2 {
   margin: 1em 0 1em 0;
-  font-family: 'Messapia', sans-serif;
+  font-family: "Messapia", sans-serif;
   font-size: 2rem;
   font-weight: 800;
   color: black;
   text-transform: uppercase;
 }
 
-#about a{
+#about a {
   background: -webkit-linear-gradient(#ff026f, var(--viola));
- -webkit-background-clip: text;
- -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
 
 #team {
   background-color: white;
@@ -275,7 +264,7 @@ a {
 
 #team h2 {
   margin: 1em 0 1em 0;
-  font-family: 'Messapia', sans-serif;
+  font-family: "Messapia", sans-serif;
   font-weight: 800;
   color: black;
   text-transform: uppercase;
@@ -288,7 +277,6 @@ a {
   color: black;
 }
 
-
 #news {
   background-color: white;
   width: 100%;
@@ -296,8 +284,9 @@ a {
   color: black;
 }
 
-#news-list, #projects-list h3{
-  font-family: 'Messapia', sans-serif;
+#news-list,
+#projects-list h3 {
+  font-family: "Messapia", sans-serif;
   font-weight: 800;
 }
 
@@ -308,7 +297,7 @@ a {
   line-height: 1.8em;
 }
 
-#lista{
+#lista {
   background-color: white;
   width: 100%;
   padding: 4em 0 8em 0;
@@ -319,7 +308,7 @@ a {
 #cover {
   background-image: url("./assets/bg-5.jpg");
   background-repeat: no-repeat;
-  border-bottom:1px solid black;
+  border-bottom: 1px solid black;
   background-size: cover;
   height: 800px;
   width: 100%;
@@ -329,11 +318,11 @@ a {
   justify-content: center;
 }
 
-#cover2{
+#cover2 {
   background-image: url("./assets/bbg-open.jpg");
-  border-bottom:1px solid black;
+  border-bottom: 1px solid black;
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   height: 500px;
   width: 100%;
   position: relative;
@@ -350,11 +339,11 @@ a {
   align-content: center;
 }
 
-.schema{
-  margin-top:2em;
-  margin-bottom:2em;
-  height:600px;
-  border:1px solid black;
+.schema {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  height: 600px;
+  border: 1px solid black;
 }
 
 ::selection {
@@ -379,32 +368,36 @@ a {
 } */
 
 select {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -webkit-padding-end: 20px;
-    -moz-padding-end: 20px;
-    -webkit-padding-start: 2px;
-    -moz-padding-start: 2px;
-    background-color: #F07575; /* Fallback color if gradients are not supported */
-    background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, var(--rosa), var(--rosa)); /* For Chrome and Safari */
-    background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, var(--rosa), var(--rosa)); /* For old Firefox (3.6 to 15) */
-    background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, var(--rosa), var(--rosa)); /* For pre-releases of Internet Explorer  10*/
-    background-image: url(../images/select-arrow.png), -o-linear-gradient(top, var(--rosa), var(--rosa)); /* For old Opera (11.1 to 12.0) */
-    background-image: url(../images/select-arrow.png), linear-gradient(to bottom,var(--rosa), var(--rosa)); /* Standard syntax; must be last */
-    background-position: center right;
-    background-repeat: no-repeat;
-    margin: 0;
-    overflow: hidden;
-    padding: 5px 35px 5px 5px;
-    font-size: 16px;
-    border: var(--rosa);
-    height: 40px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -webkit-padding-end: 20px;
+  -moz-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -moz-padding-start: 2px;
+  background-color: #f07575; /* Fallback color if gradients are not supported */
+  background-image: url(../images/select-arrow.png),
+    -webkit-linear-gradient(top, var(--rosa), var(--rosa)); /* For Chrome and Safari */
+  background-image: url(../images/select-arrow.png),
+    -moz-linear-gradient(top, var(--rosa), var(--rosa)); /* For old Firefox (3.6 to 15) */
+  background-image: url(../images/select-arrow.png),
+    -ms-linear-gradient(top, var(--rosa), var(--rosa)); /* For pre-releases of Internet Explorer  10*/
+  background-image: url(../images/select-arrow.png),
+    -o-linear-gradient(top, var(--rosa), var(--rosa)); /* For old Opera (11.1 to 12.0) */
+  background-image: url(../images/select-arrow.png),
+    linear-gradient(to bottom, var(--rosa), var(--rosa)); /* Standard syntax; must be last */
+  background-position: center right;
+  background-repeat: no-repeat;
+  margin: 0;
+  overflow: hidden;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: var(--rosa);
+  height: 40px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-
 
 /* CAUTION: Internet Explorer hackery ahead */
 select::-ms-expand {
@@ -414,17 +407,16 @@ select::-ms-expand {
 
 #selectButton {
   position: relative;
-  width:inherit;
+  width: inherit;
   position: relative;
   background-color: var(--rosa);
   border: 1px solid black;
-  margin-top:1em;
+  margin-top: 1em;
 }
 
 ul {
-    padding-inline-start: 0px
+  padding-inline-start: 0px;
 }
-
 
 .projects-list ul {
   display: flex;
@@ -432,44 +424,42 @@ ul {
   list-style-position: outside;
 }
 
-
 .news-list ul {
   display: flex;
   list-style-type: none;
 }
 
 .news-list li {
-  margin-bottom:8em;
-  color:black;
+  margin-bottom: 8em;
+  color: black;
 }
 
 .text-left {
   display: block;
   font-weight: 400;
   font-family: "Swiss", serif;
-  color:var(--viola);
-  margin-bottom:0.3em;
+  color: var(--viola);
+  margin-bottom: 0.3em;
 }
 
-.link a{
-  font-size:0.8em;
+.link a {
+  font-size: 0.8em;
   display: block;
   font-weight: 400;
   font-family: "Swiss", serif;
-  color:black;
+  color: black;
 }
 
-.link a:hover{
+.link a:hover {
   display: block;
   font-weight: 400;
   font-family: "Swiss", serif;
-  color:var(--viola);
+  color: var(--viola);
 }
-
 
 .year {
-  text-transform:capitalize;
-    font-size:0.8em;
+  text-transform: capitalize;
+  font-size: 0.8em;
   font-weight: 800;
   font-family: "Swiss", serif;
   color: black;
@@ -484,7 +474,7 @@ ul {
 }
 
 .subtitle {
-  font-family: 'Messapia', sans-serif;
+  font-family: "Messapia", sans-serif;
   font-size: 0.8em;
   font-weight: 800;
   margin: 1em 0 0.5em 0;
@@ -493,7 +483,7 @@ ul {
 
 /* Panel accordion */
 .title {
-  font-family: 'Messapia', sans-serif;
+  font-family: "Messapia", sans-serif;
   font-size: 1.3em;
   font-weight: 800;
   color: black;
@@ -501,13 +491,11 @@ ul {
   position: relative;
   margin-bottom: 0.2em;
   text-transform: capitalize;
-
 }
 
 #news-list .title::after {
-display:none;
+  display: none;
 }
-
 
 .title::after {
   border-left: 6px solid transparent;
@@ -536,12 +524,11 @@ display:none;
   padding-bottom: 60%;
   background-size: contain;
   border-radius: 10px;
-  border:1px solid black;
+  border: 1px solid black;
 }
 
-
 .description {
-  font-family: 'Swiss', serif;
+  font-family: "Swiss", serif;
   font-weight: 400;
   margin: 1em 0 0.5em 0;
   color: black;
@@ -559,8 +546,8 @@ display:none;
   font-weight: 100;
   cursor: pointer;
   border: 1px solid black;
-  padding:0.6em 1em 0.6em 1em;
-  border-radius:30px;
+  padding: 0.6em 1em 0.6em 1em;
+  border-radius: 30px;
   font-family: "Messapia", sans-serif;
 }
 
@@ -582,7 +569,6 @@ display:none;
   line-height: 1.7em;
 }
 
-
 .show {
   display: block;
   -webkit-transition: 1s;
@@ -595,16 +581,16 @@ display:none;
   transition: 1s;
 }
 
-.credits a{
+.credits a {
   text-decoration: underline;
 }
 
-.credits a p{
+.credits a p {
   text-decoration: underline;
 }
 
 /* Media query */
-@media only screen and (max-device-width : 768px) {
+@media only screen and (max-device-width: 768px) {
   body {
     font-size: 1rem;
   }
@@ -618,7 +604,7 @@ display:none;
     background-color: var(--rosa);
   }
 
-.nav-item {
+  .nav-item {
     background-color: var(--rosa);
     float: right;
     margin-bottom: 1em;
@@ -638,7 +624,7 @@ display:none;
     position: inherit;
   }
 
-#myImage{
+  #myImage {
     display: none;
     width: 0%;
     background-color: transparent;
@@ -648,8 +634,7 @@ display:none;
     width: 70%;
   }
 
-.logo{
-  width: 70%;
-}
-
+  .logo {
+    width: 70%;
+  }
 }
